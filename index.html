@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Employee Directory</title>
+</head>
+
+<body>
+    <!-- Side Navigation -->
+    <div class="row h-100" style="width: 100%;">
+      <div class="col-2">
+        <nav id="sidebar">
+          <ul class="list-unstyled components">
+            <li>
+              <a id="view" class="active" href="#">VIEW</a>
+            </li>
+            <li>
+              <a id="add" href="#">ADD</a>
+            </li>
+            <li>
+              <a id="verify" href="#">VERIFY</a>
+            </li>
+            <li>
+              <a id="update" href="#">UPDATE</a>
+            </li>
+            <li>
+              <a id="delete" href="#">DELETE</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+<!-- Removed most of the styling to get this working -->
+      <div class="col-8 border border-dark m-1">
+        <div class="pane m-3" id="viewPane" style="display: none"></div>
+        <div class="pane m-3" id="addPane" style="display: none">
+          <form action="javascript:submitEmp();">
+            <input id="addEmpName" placeholder="Name" type="text" required />
+            <input id="addEmpOfficeNum" placeholder="Office Number" type="text" required />
+            <input id="addEmpPhoneNum" placeholder="Phone Number" type="text" required />
+            <button id="addBtn" type="submit">Add</button>
+          </form>
+        </div>
+        <div class="pane m-3" id="verifyPane" style="display: none">
+          <form action="javascript:verifyEmp();">
+              <input id="verifyEmpName" placeholder="Name" type="text" required />
+              <button id="verifyBtn" type="submit">Verify</button>
+          </form>
+          <h2 id="verifyAnswer" placeholder="Answer" ></h2>
+        </div>
+
+        <div class="pane m-3" id="updatePane" style="display: none">
+          <form action="javascript:updateEmp();">
+            <input id="updateEmpName" placeholder="Name" type="text" required />
+            <input id="updateEmpOfficeNum" placeholder="Office Number" type="text" required />
+            <input id="updateEmpPhoneNum" placeholder="Phone Number" type="text" required />
+            <button id="updateBtn" type="submit">Update</button>
+          </form>
+        </div>
+
+        <div class="pane m-3" id="deletePane" style="display: none">
+          <form action="javascript:deleteEmp();">
+              <input id="deleteEmpName" placeholder="Name" type="text" required />
+              <button id="deleteBtn" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+
+    <script src="dom.js"></script>
+    <script src="employeeList.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
